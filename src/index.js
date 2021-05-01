@@ -1,7 +1,5 @@
 import './style.css';
 
-console.log('funguju!');
-
 // Hamburger menu will show dropdown menu on click and hide when a navigation link is clicked.
 
 const navBtnElm = document.querySelector('#nav-btn');
@@ -63,50 +61,15 @@ navLinksElm.forEach((elm) => {
 
 import { Drink } from './Drink/index';
 
-//SEZNAM NAPOJU
-
-// const drinks = [
-//   {
-//     id: 'cappuccino',
-//     name: 'Cappuccino',
-//     ordered: false,
-//     layers: [
-//       {
-//         color: '#feeeca',
-//         label: 'mléčná pěna',
-//       },
-//       {
-//         color: '#fed7b0',
-//         label: 'teplé mléko',
-//       },
-//       {
-//         color: '#613916',
-//         label: 'espresso',
-//       },
-//     ],
-//   },
-//   {
-//     id: 'romano',
-//     name: 'Romano',
-//     ordered: false,
-//     layers: [
-//       {
-//         color: '#fbdf5b',
-//         label: 'citrón',
-//       },
-//       {
-//         color: '#613916',
-//         label: 'espresso',
-//       },
-//     ],
-//   },
-// ];
-
 const drinkListElm = document.querySelector('.drinks-list');
+
+// ak by sme mali pole "drinks" tak by sme vypisali vsetky napoje takto:
 
 // for (let i = 0; i < drinks.length; i++) {
 //   drinkListElm.appendChild(Drink(drinks[i]));
 // }
+
+// ale my chceme pri volani komponenty Drink zavolat databazu s napojmi vo formate json, ktora je na uvedenej adrese
 
 const loadDrinks = fetch('https://apps.kodim.cz/daweb/cafelora/api/drinks')
   .then((response) => response.json())
