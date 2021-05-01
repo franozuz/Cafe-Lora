@@ -50,6 +50,8 @@ header {
   height: 5rem;
 
   background-color: #301a1a;
+  position: fixed;
+  width: 100%;
 }
 
 .topbar {
@@ -109,12 +111,6 @@ nav a:hover {
   background-size: contain;
 
   cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .nav-btn {
-    display: none;
-  }
 }
 
 .nav-btn:focus {
@@ -250,6 +246,16 @@ nav a:hover {
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery--text {
+  background-color: hsla(0, 29.7%, 14.5%, 0.7);
+  max-width: 40%;
+  padding: 3em;
+  text-align: justify;
 }
 
 .contacts {
@@ -314,5 +320,9 @@ nav a:hover {
 
   .drink {
     width: 33.333%;
+  }
+
+  .nav-btn {
+    display: none;
   }
 }
