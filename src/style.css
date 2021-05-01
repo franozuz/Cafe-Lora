@@ -111,6 +111,12 @@ nav a:hover {
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+}
+
 .nav-btn:focus {
   outline: none;
 }
