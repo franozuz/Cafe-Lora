@@ -18,7 +18,7 @@ navLinksElm.forEach((elm) => {
   });
 });
 
-// Objednavani napoje po clicknuti na Objednej btn
+// Objednavani napoje po clicknuti na Objednej btn - zmeni napis na btn na Zrusit a zmeni obrazok.
 
 const orderBtnElm = document.querySelector('.order-btn');
 const drinkCupElm = document.querySelector('.drink__cup');
@@ -35,3 +35,28 @@ orderBtnElm.addEventListener('click', () => {
     ordered = false;
   }
 });
+
+// Každý nápoj bude obsahovat seznam ingrediencí. Na stránce vidíme příklad pro cappuccino. Budeme přepisovat kód tak, aby ingredience (vrstva) byla komponenta.
+
+import { Layer } from './Layer/index';
+
+const layerElm = document.querySelector('.drink__info');
+
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
+
+for (let i = 0; i < layers.length; i++) {
+  layerElm.innerHTML += Layer(layers[i]);
+}
