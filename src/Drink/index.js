@@ -27,5 +27,20 @@ export const Drink = (props) => {
     layersElm.innerHTML += Layer(props.layers[i]);
   }
 
+  const orderBtnElm = drinkElm.querySelector('.order-btn');
+  const drinkCupElm = drinkElm.querySelector('.drink__cup');
+
+  orderBtnElm.addEventListener('click', () => {
+    if (props.ordered === false) {
+      orderBtnElm.textContent = 'Zrušit';
+      drinkCupElm.classList.add('drink__cup--selected');
+      props.ordered = true;
+    } else if (props.ordered === true) {
+      orderBtnElm.textContent = 'Objednat';
+      drinkCupElm.classList.remove('drink__cup--selected');
+      props.ordered = false;
+    }
+  });
+
   return drinkElm;
 };
